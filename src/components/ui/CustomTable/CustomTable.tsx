@@ -1,9 +1,9 @@
-import { Button, Pagination, Table, TableBody, TableHead } from '@mui/material';
+// import { Button, Pagination, Table, TableBody, TableHead } from '@mui/material';
 import * as customTableStyle from './customTableStyle';
-import dayjs from 'dayjs';
-import React from 'react';
-import { useRouter } from 'next/navigation';
-import router from 'next/router';
+// import dayjs from 'dayjs';
+// import React from 'react';
+// import { useRouter } from 'next/navigation';
+// import router from 'next/router';
 
 export interface HeadRow {
   name: string;
@@ -35,16 +35,16 @@ export function CustomTable({
 }: CustomTableProps) {
   const router = useRouter();
 
-  const handleRouteUploadPage = async (adminCenterTitleEng: string | undefined) => {
-    // router.push(`${adminCenterTItleEng}/upload`);
-    //console.log('adminCenterTItleEng =>', adminCenterTitleEng);
-    router.push(`/admin-center/post/${adminCenterTitleEng}/upload?navType=post&sideType=${adminCenterTitleEng}`);
-  };
+  // const handleRouteUploadPage = async (adminCenterTitleEng: string | undefined) => {
+  //   router.push(`${adminCenterTItleEng}/upload`);
+  //   console.log('adminCenterTItleEng =>', adminCenterTitleEng);
+  //   router.push(`/admin-center/post/${adminCenterTitleEng}/upload?navType=post&sideType=${adminCenterTitleEng}`);
+  // };
 
-  const handleRouteModifyPage = async (seq: number) => {
-    // router.push(`${adminCenterTItleEng}?navType=post&sideType=notice/modify/${seq}`);
-    router.push(`${adminCenterTitleEng}/modify/${seq}`);
-  };
+  // const handleRouteModifyPage = async (seq: number) => {
+  //   router.push(`${adminCenterTItleEng}?navType=post&sideType=notice/modify/${seq}`);
+  //   router.push(`${adminCenterTitleEng}/modify/${seq}`);
+  // };
 
   return (
     <customTableStyle.AdminCenterContainer>
