@@ -1,9 +1,8 @@
 import { CustomTable } from '@/components/ui/CustomTable';
 import { useState } from 'react';
 import { HeadRow } from '@/components/ui/CustomTable/CustomTable';
-// import { getUserPostList } from '@common/apis/list';
-// import { HeadRow } from '@components/ui/CustomTable/CustomTable';
 import * as customTableStyle from '@/components/ui/CustomTable/customTableStyle';
+import { getUserPostList } from '@/common/apis/list';
 
 const headRows: HeadRow[] = [
   { name: 'No', align: 'center', width: '5%', value: 'seq' },
@@ -32,32 +31,33 @@ export function ListManagement() {
     elementCnt: 10,
   });
   const postListDataContent = postListData?.content;
+  console.log('postListDataContent : ', postListData);
 
-  // if (postListIsLoading) {
-  //   return (
-  //     <customTableStyle.ManagementContainer>
-  //       Loading...
-  //     </customTableStyle.ManagementContainer>
-  //   );
-  // }
-  // if (postListError) {
-  //   return (
-  //     <customTableStyle.ManagementContainer>
-  //       Error...
-  //     </customTableStyle.ManagementContainer>
-  //   );
-  // }
+  if (postListIsLoading) {
+    return (
+      <customTableStyle.ManagementContainer>
+        Loading...
+      </customTableStyle.ManagementContainer>
+    );
+  }
+  if (postListError) {
+    return (
+      <customTableStyle.ManagementContainer>
+        Error...
+      </customTableStyle.ManagementContainer>
+    );
+  }
   return (
     <customTableStyle.ManagementContainer>
-      {/* <CustomTable
-          adminCenterTitleKr={'공지사항'}
-          adminCenterTitleEng={'notice'}
-          headRows={headRows}
-          data={postListDataContent}
-          count={postListData.totalPages}
-          page={page}
-          onPageChange={handlePageChange}
-        /> */}
+      <CustomTable
+        adminCenterTitleKr={'공지사항'}
+        adminCenterTitleEng={'notice'}
+        headRows={headRows}
+        data={postListDataContent}
+        count={postListData.totalPages}
+        page={page}
+        onPageChange={handlePageChange}
+      />
     </customTableStyle.ManagementContainer>
   );
 }

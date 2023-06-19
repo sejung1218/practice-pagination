@@ -1,10 +1,8 @@
+import axios from 'axios';
 import { useQuery } from 'react-query';
-import { GET } from '@common/httpClient';
-import { PaginationResult } from '@/type/fetch';
-import { PostDetailResponseDto, PostResponseDto } from '@common/Api';
 
 // [유저] 공지사항 및 자료실 전체 리스트 API
-export const getUserPostList = async ({
+export const getUserPostList = ({
   postType,
   courseSeq,
   page,
@@ -18,9 +16,12 @@ export const getUserPostList = async ({
   return useQuery(
     ['postListData', { postType, courseSeq, page, elementCnt }],
     async () => {
-      const response = await axios.get(`/post`, {
-        params: { postType, page, courseSeq, elementCnt },
-      });
+      const response = await axios.get(
+        `https://lcsocketdev.bonobono.dev/api/v1/post`,
+        {
+          params: { postType, page, courseSeq, elementCnt },
+        }
+      );
       return response.data;
     }
   );
@@ -31,7 +32,7 @@ export const getUserPostDetail = ({ postSeq }: { postSeq: number | null }) => {
   return useQuery(
     ['postDetailData', { postSeq }],
     async () => {
-      const response = await GET(`/post/${postSeq}`, {
+      const response = await axios.get(`/post/${postSeq}`, {
         params: { postSeq },
       });
       return response.data;
@@ -42,15 +43,3 @@ export const getUserPostDetail = ({ postSeq }: { postSeq: number | null }) => {
     }
   );
 };
-
-//챗봇 전용
-export function getChatRoomFaqList() {
-  return GET<{ data: PaginationResult<PostResponseDto[]> }>(`/post`, {
-    params: { page: 1, postType: 'TYPE_FAQ', courseSeq: 0, elementCnt: 20 },
-  });
-}
-
-//챗봇 전용
-export function getChatRoomFaqDetail(postSeq: number) {
-  return GET<{ data: PostDetailResponseDto }>(`/post/${postSeq}`);
-}
