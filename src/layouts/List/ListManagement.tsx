@@ -1,9 +1,10 @@
 import { CustomTable } from '@/components/ui/CustomTable';
 import { useState } from 'react';
-import {HeadRow} from "@/components/ui/CustomTable/CustomTable";
-import { getUserPostList } from '@common/apis/list';
-// import { HeadRow } from '@components/ui/CustomTable/CustomTable';
+import { HeadRow } from '@/components/ui/CustomTable/CustomTable';
 import * as customTableStyle from '@/components/ui/CustomTable/customTableStyle';
+import { getUserPostList } from '@/common/apis/list';
+
+// TODO : totalpages 확인.
 
 const headRows: HeadRow[] = [
   { name: 'No', align: 'center', width: '5%', value: 'seq' },
@@ -11,7 +12,7 @@ const headRows: HeadRow[] = [
   { name: '등록자', align: 'center', width: '20%', value: 'user.nickName' },
   { name: '작성일', align: 'center', width: '10%', value: 'createdDtime' },
   { name: '수정일', align: 'center', width: '10%', value: 'modifiedDtime' },
-  { name: '공지여부', align: 'center', width: '10%', value: 'noticeYn' }
+  { name: '공지여부', align: 'center', width: '10%', value: 'noticeYn' },
 ];
 export function ListManagement() {
   const [page, setPage] = useState<number>(1);
@@ -24,16 +25,32 @@ export function ListManagement() {
   const {
     data: postListData,
     isLoading: postListIsLoading,
-    error: postListError
-  } = getUserPostList({ postType: 'TYPE_NOTICE', courseSeq: 0, page: page, elementCnt: 10 });
-  const postListDataContent = postListData?.content;
+    error: postListError,
+  } = getUserPostList({
+    postType: 'TYPE_NOTICE',
+    courseSeq: 0,
+    page: page,
+    elementCnt: 10,
+  });
+  const postListDataContent = postListData?.data.content;
+  console.log('postListDataContent : ', postListData?.data.content);
+  console.log('페이지는 : ', page);
+  console.log('postListData : ', postListData);
 
   if (postListIsLoading) {
-    return <customTableStyle.ManagementContainer>Loading...</customTableStyle.ManagementContainer>;
+    return (
+      <customTableStyle.ManagementContainer>
+        Loading...
+      </customTableStyle.ManagementContainer>
+    );
   }
   if (postListError) {
-    return <customTableStyle.ManagementContainer>Error...</customTableStyle.ManagementContainer>;
-  // }
+    return (
+      <customTableStyle.ManagementContainer>
+        Error...
+      </customTableStyle.ManagementContainer>
+    );
+  }
   return (
     <customTableStyle.ManagementContainer>
       <CustomTable

@@ -53,11 +53,10 @@ export const AdminTitleTypography = styled(Typography)`
 export const AdminHeadTableRow = styled(TableRow)`
   //background-color: #16c293;
   //background-color: rgba(150, 150, 150, 0.5);
-  
+
   .css-1nhwmjw-MuiTableCell-root {
-    padding: 8px; !important;
+    padding: 8px !important;
     border-top: 1px solid red;
-    
   }
 `;
 
@@ -80,7 +79,7 @@ export const AdminBodyTableRow = styled(TableRow)`
     //background-color: #f5f5f5 !important;
     background-color: #cacaca !important;
   }
-  
+
   //background-color: rgba(150, 150, 150, 0.25);
   &:nth-of-type(even) {
     //background-color: rgba(150, 150, 150, 0.3);
@@ -89,13 +88,12 @@ export const AdminBodyTableRow = styled(TableRow)`
     //  #99cd89
   }
 
-
   //.css-tjsolo-MuiTableRow-root:hover {
   //  background-color: red; !important;
   //}
 
   .css-1q22dw8-MuiTableCell-root {
-    padding: 8px; !important;
+    padding: 8px !important;
   }
 `;
 
