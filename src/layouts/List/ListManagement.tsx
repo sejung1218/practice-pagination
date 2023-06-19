@@ -32,6 +32,8 @@ export function ListManagement() {
   });
   const postListDataContent = postListData?.data.content;
   console.log('postListDataContent : ', postListData?.data.content);
+  console.log('페이지는 : ', page);
+  console.log('postListData : ', postListData);
 
   if (postListIsLoading) {
     return (

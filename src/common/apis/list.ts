@@ -14,7 +14,7 @@ export const getUserPostList = ({
   postType: string;
   courseSeq: number;
   page: number;
-  elementCnt: number;
+  elementCnt?: number;
 }) => {
   return useQuery(
     ['postListData', { postType, courseSeq, page, elementCnt }],
@@ -36,9 +36,12 @@ export const getUserPostDetail = ({ postSeq }: { postSeq: number | null }) => {
   return useQuery(
     ['postDetailData', { postSeq }],
     async () => {
-      const response = await axios.get(`/post/${postSeq}`, {
-        params: { postSeq },
-      });
+      const response = await axios.get(
+        `https://lcapidev.bonobono.dev/api/v1/post/${postSeq}`,
+        {
+          params: { postSeq },
+        }
+      );
       return response.data;
     },
     {
