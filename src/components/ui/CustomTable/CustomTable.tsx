@@ -1,9 +1,9 @@
-import { Button, Pagination, Table, TableBody, TableHead } from '@mui/material';
+// import { Button, Pagination, Table, TableBody, TableHead } from '@mui/material';
 import * as customTableStyle from './customTableStyle';
-import dayjs from 'dayjs';
-import React from 'react';
-import { useRouter } from 'next/navigation';
-import router from 'next/router';
+// import dayjs from 'dayjs';
+// import React from 'react';
+// import { useRouter } from 'next/navigation';
+// import router from 'next/router';
 
 export interface HeadRow {
   name: string;
@@ -45,10 +45,11 @@ export function CustomTable({
     );
   };
 
-  const handleRouteModifyPage = async (seq: number) => {
-    // router.push(`${adminCenterTItleEng}?navType=post&sideType=notice/modify/${seq}`);
-    router.push(`${adminCenterTitleEng}/modify/${seq}`);
-  };
+
+  // const handleRouteModifyPage = async (seq: number) => {
+  //   router.push(`${adminCenterTItleEng}?navType=post&sideType=notice/modify/${seq}`);
+  //   router.push(`${adminCenterTitleEng}/modify/${seq}`);
+  // };
 
   return (
     <customTableStyle.AdminCenterContainer>
