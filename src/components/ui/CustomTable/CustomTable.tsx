@@ -31,15 +31,19 @@ export function CustomTable({
   data,
   count,
   onPageChange,
-  page
+  page,
 }: CustomTableProps) {
   const router = useRouter();
 
-  // const handleRouteUploadPage = async (adminCenterTitleEng: string | undefined) => {
-  //   router.push(`${adminCenterTItleEng}/upload`);
-  //   console.log('adminCenterTItleEng =>', adminCenterTitleEng);
-  //   router.push(`/admin-center/post/${adminCenterTitleEng}/upload?navType=post&sideType=${adminCenterTitleEng}`);
-  // };
+  const handleRouteUploadPage = async (
+    adminCenterTitleEng: string | undefined
+  ) => {
+    // router.push(`${adminCenterTItleEng}/upload`);
+    //console.log('adminCenterTItleEng =>', adminCenterTitleEng);
+    router.push(
+      `/admin-center/post/${adminCenterTitleEng}/upload?navType=post&sideType=${adminCenterTitleEng}`
+    );
+  };
 
   // const handleRouteModifyPage = async (seq: number) => {
   //   router.push(`${adminCenterTItleEng}?navType=post&sideType=notice/modify/${seq}`);
@@ -48,12 +52,18 @@ export function CustomTable({
 
   return (
     <customTableStyle.AdminCenterContainer>
-      <customTableStyle.AdminTitleTypography variant="h5">{adminCenterTitleKr}</customTableStyle.AdminTitleTypography>
+      <customTableStyle.AdminTitleTypography variant='h5'>
+        {adminCenterTitleKr}
+      </customTableStyle.AdminTitleTypography>
       <Table>
         <TableHead>
           <customTableStyle.AdminHeadTableRow>
             {headRows.map(({ name, align, width }) => (
-              <customTableStyle.AdminHeadTableCell key={name} align={align} width={width}>
+              <customTableStyle.AdminHeadTableCell
+                key={name}
+                align={align}
+                width={width}
+              >
                 {name}
               </customTableStyle.AdminHeadTableCell>
             ))}
@@ -69,8 +79,13 @@ export function CustomTable({
               onClick={() => handleRouteModifyPage(item02.seq)}
             >
               {headRows?.map((item01: HeadRow) => (
-                <customTableStyle.AdminBodyTableCell key={item01.name} align={item01.align} width={item01.width}>
-                  {item01.value === 'createdDtime' || item01.value === 'modifiedDtime'
+                <customTableStyle.AdminBodyTableCell
+                  key={item01.name}
+                  align={item01.align}
+                  width={item01.width}
+                >
+                  {item01.value === 'createdDtime' ||
+                  item01.value === 'modifiedDtime'
                     ? dayjs(item02[item01.value]).format('YYYY/MM/DD HH:mm')
                     : item01.value.startsWith('user.')
                     ? item02.user[item01.value.split('.')[1]]
@@ -84,8 +99,8 @@ export function CustomTable({
       <customTableStyle.AdminButtonBox>
         <Button
           className={'uploadButton'}
-          variant="contained"
-          color="primary"
+          variant='contained'
+          color='primary'
           onClick={() => handleRouteUploadPage(adminCenterTitleEng)}
         >
           {adminCenterTitleKr} 업로드
@@ -93,9 +108,9 @@ export function CustomTable({
       </customTableStyle.AdminButtonBox>
 
       <Pagination
-        className="boardPagination"
+        className='boardPagination'
         count={count}
-        shape="circular"
+        shape='circular'
         page={page}
         size={'small'}
         onChange={(event, value) => {
