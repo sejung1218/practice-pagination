@@ -21,17 +21,17 @@ export function ListManagement() {
   };
 
   // 공지사항 전체 리스트 API
-  // const {
-  //   data: postListData,
-  //   isLoading: postListIsLoading,
-  //   error: postListError,
-  // } = getUserPostList({
-  //   postType: 'TYPE_NOTICE',
-  //   courseSeq: 0,
-  //   page: page,
-  //   elementCnt: 10,
-  // });
-  // const postListDataContent = postListData?.content;
+  const {
+    data: postListData,
+    isLoading: postListIsLoading,
+    error: postListError,
+  } = getUserPostList({
+    postType: 'TYPE_NOTICE',
+    courseSeq: 0,
+    page: page,
+    elementCnt: 10,
+  });
+  const postListDataContent = postListData?.content;
 
   // if (postListIsLoading) {
   //   return (
