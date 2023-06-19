@@ -30,8 +30,8 @@ export function ListManagement() {
     page: page,
     elementCnt: 10,
   });
-  const postListDataContent = postListData?.content;
-  console.log('postListDataContent : ', postListData);
+  const postListDataContent = postListData?.data.content;
+  console.log('postListDataContent : ', postListData?.data.content);
 
   if (postListIsLoading) {
     return (

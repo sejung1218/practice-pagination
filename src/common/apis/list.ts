@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useQuery } from 'react-query';
 
 const accessToken =
-  'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpeWFiOTNAZ21haWwuY29tIiwiaWF0IjoxNjc5OTcwODU3LCJleHAiOjE2ODA1NzU2NTcsImlzcyI6ImxlYXJuaW5nQ29kZSIsIm5hbWUiOiJpeWFiOTNAZ21haWwuY29tIn0.pxhN8z08xkbkB-Pd_hm9oJmG6ApD1IeNxSHl8hRezu5fPWmI9r0L4zDzebX4IjzI7XM3LxFhxH096ooSluRnZA';
+  'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkbHRwd2pkMDExOEBnbWFpbC5jb20iLCJpYXQiOjE2ODY3MDMwMDQsImV4cCI6MTY4NzMwNzgwNCwiaXNzIjoibGVhcm5pbmdDb2RlIiwibmFtZSI6ImRsdHB3amQwMTE4QGdtYWlsLmNvbSJ9._du_F-cGRsVp0OuZFYMTWTBYEOPdVgNUdD6ewdCRlXLOMERrjve07VC1wx6REuJjSaxVCu_mhOmRfDKGDX8-Iw';
 
 // [유저] 공지사항 및 자료실 전체 리스트 API
 export const getUserPostList = ({
@@ -20,7 +20,7 @@ export const getUserPostList = ({
     ['postListData', { postType, courseSeq, page, elementCnt }],
     async () => {
       const response = await axios.get(
-        `https://lcsocketdev.bonobono.dev/api/v1/post`,
+        `https://lcapidev.bonobono.dev/api/v1/post`,
         {
           headers: { Authorization: `Bearer ${accessToken}` },
           params: { postType, page, courseSeq, elementCnt },
