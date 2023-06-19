@@ -4,6 +4,8 @@ import { HeadRow } from '@/components/ui/CustomTable/CustomTable';
 import * as customTableStyle from '@/components/ui/CustomTable/customTableStyle';
 import { getUserPostList } from '@/common/apis/list';
 
+// TODO : totalpages 확인.
+
 const headRows: HeadRow[] = [
   { name: 'No', align: 'center', width: '5%', value: 'seq' },
   { name: '제목', align: 'center', width: '45%', value: 'subject' },
