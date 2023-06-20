@@ -4,8 +4,6 @@ import { HeadRow } from '@/components/ui/CustomTable/CustomTable';
 import * as customTableStyle from '@/components/ui/CustomTable/customTableStyle';
 import { getUserPostList } from '@/common/apis/list';
 
-// TODO : totalpages 확인.
-
 const headRows: HeadRow[] = [
   { name: 'No', align: 'center', width: '5%', value: 'seq' },
   { name: '제목', align: 'center', width: '45%', value: 'subject' },
@@ -30,12 +28,15 @@ export function ListManagement() {
     postType: 'TYPE_NOTICE',
     courseSeq: 0,
     page: page,
-    elementCnt: 10,
+    // elementCnt: 10,
   });
   const postListDataContent = postListData?.data.content;
-  console.log('postListDataContent : ', postListData?.data.content);
-  console.log('페이지는 : ', page);
-  console.log('postListData : ', postListData);
+
+  // console.log('postListData : ', postListData);
+  // console.log('postListDataContent : ', postListData?.data.content);
+  // console.log('페이지는 : ', page);
+  // console.log('토탈엘리먼츠 : ', postListData?.data.totalElements);
+  // console.log('토탈페이지는 : ', postListData?.data.totalPages);
 
   if (postListIsLoading) {
     return (
@@ -58,7 +59,7 @@ export function ListManagement() {
         adminCenterTitleEng={'notice'}
         headRows={headRows}
         data={postListDataContent}
-        count={postListData.totalPages}
+        count={postListData.data.totalPages}
         page={page}
         onPageChange={handlePageChange}
       />
