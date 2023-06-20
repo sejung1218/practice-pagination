@@ -7,11 +7,13 @@ export const ManagementContainer = styled(Box)`
   vertical-align: center;
   align-items: center;
   justify-content: center;
-  width: 90%;
+  width: 100%; // 90%;
   min-width: 1500px;
   height: 20%;
   max-height: 20%;
   box-sizing: border-box;
+  /* border: 1px solid red; */
+  margin-top: 50px;
 `;
 
 export const AdminCenterContainer = styled(Box)`
@@ -22,7 +24,7 @@ export const AdminCenterContainer = styled(Box)`
   flex-direction: column;
   vertical-align: center;
   align-items: center;
-  padding: 20px;
+  /* padding: 20px; */
 
   .boardPagination {
     margin-top: 20px;
@@ -46,7 +48,7 @@ export const AdminCenterContainer = styled(Box)`
 
 export const AdminTitleTypography = styled(Typography)`
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 `;
 
 // 테이블 헤드

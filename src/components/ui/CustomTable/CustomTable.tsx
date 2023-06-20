@@ -48,10 +48,12 @@ export function CustomTable({
     );
   };
 
-  // const handleRouteModifyPage = async (seq: number) => {
-  //   router.push(`${adminCenterTItleEng}?navType=post&sideType=notice/modify/${seq}`);
-  //   router.push(`${adminCenterTitleEng}/modify/${seq}`);
-  // };
+  const handleRouteModifyPage = async (seq: number) => {
+    router.push(
+      `${adminCenterTitleEng}?navType=post&sideType=notice/modify/${seq}`
+    );
+    router.push(`${adminCenterTitleEng}/modify/${seq}`);
+  };
 
   return (
     <customTableStyle.AdminCenterContainer>
@@ -73,13 +75,14 @@ export function CustomTable({
           </customTableStyle.AdminHeadTableRow>
         </TableHead>
 
+        {/* 이부분에서 계산해보자 */}
         <TableBody>
           {data?.map((item02: any) => (
             <customTableStyle.AdminBodyTableRow
               key={item02.id}
               sx={{ cursor: 'pointer' }}
               hover
-              // onClick={() => handleRouteModifyPage(item02.seq)}
+              onClick={() => handleRouteModifyPage(item02.seq)}
             >
               {headRows?.map((item01: HeadRow) => (
                 <customTableStyle.AdminBodyTableCell
