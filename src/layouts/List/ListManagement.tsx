@@ -32,11 +32,11 @@ export function ListManagement() {
   });
   const postListDataContent = postListData?.data.content;
 
-  // console.log('postListData : ', postListData);
-  // console.log('postListDataContent : ', postListData?.data.content);
-  // console.log('페이지는 : ', page);
-  // console.log('토탈엘리먼츠 : ', postListData?.data.totalElements);
-  // console.log('토탈페이지는 : ', postListData?.data.totalPages);
+  console.log('postListData : ', postListData);
+  console.log('postListDataContent : ', postListData?.data.content);
+  console.log('페이지는 : ', page);
+  console.log('토탈엘리먼츠 : ', postListData?.data.totalElements);
+  console.log('토탈페이지는 : ', postListData?.data.totalPages);
 
   if (postListIsLoading) {
     return (
