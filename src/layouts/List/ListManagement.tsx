@@ -4,6 +4,8 @@ import { HeadRow } from '@/components/ui/CustomTable/CustomTable';
 import * as customTableStyle from '@/components/ui/CustomTable/customTableStyle';
 import { getUserPostList } from '@/common/apis/list';
 
+// TODO : KDT 서버 종료 및 토큰 기간 만료로 에러 발생. CN LMS 게시판으로 변경 필요
+
 const headRows: HeadRow[] = [
   { name: 'No', align: 'center', width: '5%', value: 'seq' },
   { name: '제목', align: 'center', width: '45%', value: 'subject' },
