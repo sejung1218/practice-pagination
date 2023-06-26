@@ -5,6 +5,7 @@ import * as customTableStyle from '@/components/ui/CustomTable/customTableStyle'
 import { getUserPostList } from '@/common/apis/list';
 
 // TODO : KDT 서버 종료 및 토큰 기간 만료로 에러 발생. CN LMS 게시판으로 변경 필요
+// TODO : CN LMS 고도화 작업 시작. 보류.
 
 const headRows: HeadRow[] = [
   { name: 'No', align: 'center', width: '5%', value: 'seq' },
@@ -34,11 +35,11 @@ export function ListManagement() {
   });
   const postListDataContent = postListData?.data.content;
 
-  console.log('postListData : ', postListData);
-  console.log('postListDataContent : ', postListData?.data.content);
-  console.log('페이지는 : ', page);
-  console.log('토탈엘리먼츠 : ', postListData?.data.totalElements);
-  console.log('토탈페이지는 : ', postListData?.data.totalPages);
+  // console.log('postListData : ', postListData);
+  // console.log('postListDataContent : ', postListData?.data.content);
+  // console.log('페이지는 : ', page);
+  // console.log('토탈엘리먼츠 : ', postListData?.data.totalElements);
+  // console.log('토탈페이지는 : ', postListData?.data.totalPages);
 
   if (postListIsLoading) {
     return (
