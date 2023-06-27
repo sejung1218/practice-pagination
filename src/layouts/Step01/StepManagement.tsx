@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { CustomTable } from '@/components/ui/CustomTable';
 import * as customTableStyle from '@/components/ui/CustomTable/customTableStyle';
 
+// #TODO : Board UI Check
+
 const headRows: HeadRow[] = [
   { name: 'No', align: 'center', width: '5%', value: 'seq' },
   { name: '제목', align: 'center', width: '45%', value: 'subject' },
