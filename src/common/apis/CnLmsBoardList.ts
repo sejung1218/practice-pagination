@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useQuery } from 'react-query';
 
+// TODO : 충남 LMS 플랫폼에서 post api의 page 확인할것.
+
 // [유저] 공지사항 및 자료실 전체 리스트 API
 export const getUserCnLmsPostList = ({
   boardType,
