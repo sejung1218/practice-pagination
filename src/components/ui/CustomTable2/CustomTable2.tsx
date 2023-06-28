@@ -117,7 +117,7 @@ export function CustomTable2({
         className='boardPagination'
         count={count}
         shape='circular'
-        page={page}
+        page={page + 1}
         size={'small'}
         onChange={(event, value) => {
           onPageChange(value);
