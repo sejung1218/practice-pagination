@@ -21,7 +21,7 @@ interface CustomTableProps {
   adminCenterTitleKr?: string;
   adminCenterTitleEng?: string;
   data: any;
-  count: number;
+  count?: number;
   onPageChange: (newPage: number) => void;
   // modifySeq: string;
   page: number;

@@ -18,7 +18,7 @@ export const getUserCnLmsPostList = ({
     async () => {
       const response = await axios.get(`https://api.bonobono.dev/api/v1/post`, {
         // headers: { Authorization: `Bearer ${accessToken}` },
-        params: { boardType, page, elementCnt: 1 },
+        params: { boardType, page, elementCnt },
       });
       return response.data;
     }

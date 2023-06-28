@@ -16,7 +16,8 @@ const headRows: HeadRow[] = [
 ];
 
 export function StepManagement() {
-  const [page, setPage] = useState<number>(1);
+  const [page, setPage] = useState<number>(0);
+  // const [page, setPage] = useState<number>(1);
 
   const handlePageChange = (newPage: number) => {
     setPage(newPage);
