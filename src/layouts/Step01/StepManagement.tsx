@@ -5,6 +5,7 @@ import { CustomTable2 } from '@/components/ui/CustomTable2';
 import * as customTableStyle2 from '@/components/ui/CustomTable2/customTableStyle2';
 
 // #TODO : Board UI Check
+// TODO : Default page 가 0이라 page + 1 을 해줘야 정상 작동.
 
 const headRows: HeadRow[] = [
   { name: 'No', align: 'center', width: '5%', value: 'seq' },
