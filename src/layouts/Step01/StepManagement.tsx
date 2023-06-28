@@ -60,7 +60,7 @@ export function StepManagement() {
         headRows={headRows}
         data={postListDataContent}
         count={postListData.data.totalPages}
-        page={page}
+        page={page + 1}
         onPageChange={handlePageChange}
       />
     </customTableStyle2.ManagementContainer>
