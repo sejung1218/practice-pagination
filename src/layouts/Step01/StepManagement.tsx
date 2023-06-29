@@ -18,11 +18,11 @@ const headRows: HeadRow[] = [
 ];
 
 export function StepManagement() {
-  const [page, setPage] = useState<number>(0);
+  const [page, setPage] = useState<number>(1);
   // const [page, setPage] = useState<number>(1);
 
   const handlePageChange = (newPage: number) => {
-    setPage(newPage);
+    setPage(newPage + 1);
   };
 
   // 공지사항 전체 리스트 API
