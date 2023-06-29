@@ -9,11 +9,14 @@ export const ManagementContainer = styled(Box)`
   justify-content: center;
   width: 100%; // 90%;
   min-width: 1500px;
+  max-width: 1900px;
+  /* max-width: 100%; */
   height: 20%;
   max-height: 20%;
   box-sizing: border-box;
-  /* border: 1px solid red; */
+  border: 1px solid blue;
   margin-top: 50px;
+  padding: 0px;
 `;
 
 export const AdminCenterContainer = styled(Box)`
@@ -24,8 +27,9 @@ export const AdminCenterContainer = styled(Box)`
   flex-direction: column;
   vertical-align: center;
   align-items: center;
-  /* padding: 20px; */
+  border: 1px solid red;
 
+  /* padding: 20px; */
   .boardPagination {
     margin-top: 20px;
     & .MuiPaginationItem-root {
@@ -58,7 +62,7 @@ export const AdminHeadTableRow = styled(TableRow)`
 
   .css-1nhwmjw-MuiTableCell-root {
     padding: 8px !important;
-    border-top: 1px solid red;
+    /* border-top: 1px solid red; */
   }
 `;
 
@@ -69,7 +73,6 @@ export const AdminHeadTableCell = styled(TableCell)`
   //border-top: 1px solid #f0f0f0;
   //border-right: 1px solid rgba(224, 224, 224, 1);
   border-top: 1px solid rgba(224, 224, 224, 1);
-
   &:first-of-type {
     //border-left: 1px solid rgba(224, 224, 224, 1);
     //  background: #f5f5f5;
@@ -81,6 +84,10 @@ export const AdminBodyTableRow = styled(TableRow)`
     //background-color: #f5f5f5 !important;
     background-color: #cacaca !important;
   }
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100px;
 
   //background-color: rgba(150, 150, 150, 0.25);
   &:nth-of-type(even) {
@@ -101,16 +108,25 @@ export const AdminBodyTableRow = styled(TableRow)`
 
 // 테이블의 본문
 export const AdminBodyTableCell = styled(TableCell)`
+  /* border: 1px solid blue; */
   margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100px;
   //border-right: 1px solid rgba(224, 224, 224, 1);
   //background-color: red;
-  //&:hover {
-  //  background-color: blue;
-  //}
+  /* &:hover {
+    background-color: blue;
+  } */
   &:last-of-type {
     //border-right: none;
   }
-
+  :nth-of-type(3) {
+    /* background-color: red; */
+    /* border: 1px solid red; */
+    max-width: 1px;
+  }
   //&:first-of-type {
   //  border-left: 1px solid rgba(224, 224, 224, 1);
   //}
