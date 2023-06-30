@@ -123,7 +123,7 @@ export const AdminBodyTableCell = styled(TableCell)`
     //border-right: none;
   }
   :nth-of-type(3) {
-    /* background-color: red; */
+    background-color: gray;
     /* border: 1px solid red; */
     max-width: 1px;
   }
