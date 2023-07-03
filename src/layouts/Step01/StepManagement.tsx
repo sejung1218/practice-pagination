@@ -21,9 +21,9 @@ export function StepManagement() {
   const [page, setPage] = useState<number>(1);
   // const [page, setPage] = useState<number>(1);
 
-  const handlePageChange = (newPage: number) => {
-    setPage(newPage + 1);
-  };
+  // const handlePageChange = (newPage: number) => {
+  //   setPage(newPage + 1);
+  // };
 
   // 공지사항 전체 리스트 API
   const {
@@ -37,8 +37,8 @@ export function StepManagement() {
   });
   const postListDataContent = postListData?.data.content;
 
-  console.log('데이터 : ', postListDataContent);
-  console.log('페이지 : ', page);
+  // console.log('데이터 : ', postListDataContent);
+  // console.log('페이지 : ', page);
 
   if (postListIsLoading) {
     return (
